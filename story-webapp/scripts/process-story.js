@@ -11,8 +11,13 @@ async function processStory() {
     process.exit(1);
   }
   
-  // Convert docx to HTML
-  const result = await mammoth.convertToHtml({ path: storyPath });
+  // Convert docx to HTML with custom style mappings
+  const result = await mammoth.convertToHtml({ 
+    path: storyPath,
+    styleMap: [
+      "p[style-name='Horizontal Line'] => hr" // Map horizontal line style
+    ]
+  });
   let html = result.value;
   
   // Cut off everything after "END OF FILE"

@@ -137,3 +137,11 @@
     font-size: 1.05em;
   }
 }
+
+.content hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 40px auto;
+  width: 50%;
+  max-width: 200px;
+}
